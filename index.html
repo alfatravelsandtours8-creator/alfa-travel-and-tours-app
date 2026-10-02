@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#d60000" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="apple-touch-icon" href="icons/icon-192.png" />
+  <title>Alfa Travel and Tours | Worry Less, Fly More</title>
+  <meta name="description" content="Alfa Travel and Tours - Flight booking, airline ticketing, tours, hotel booking, airport transfers and travel assistance in Abuja, Nigeria." />
+  <style>
+    :root{
+      --red:#d60000;--dark:#171717;--light:#fff;--soft:#f7f7f7;
+      --muted:#666;--green:#25D366;--border:#eee;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:Arial,Helvetica,sans-serif;color:var(--dark);background:#fff;line-height:1.6}
+    a{text-decoration:none;color:inherit}
+    .container{width:min(1120px,92%);margin:auto}
+    header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.97);border-bottom:1px solid var(--border);backdrop-filter:blur(8px)}
+    nav{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:800}
+    .brand img{width:55px;height:55px;object-fit:contain}
+    .brand span{font-size:17px}
+    .navlinks{display:flex;gap:20px;font-weight:700;font-size:14px}
+    .navlinks a:hover{color:var(--red)}
+    .navbtn,.hero-btn,.whatsapp-btn{background:var(--red);color:white;padding:12px 18px;border-radius:999px;font-weight:800;display:inline-flex;align-items:center;justify-content:center;border:0;cursor:pointer}
+    .navbtn:hover,.hero-btn:hover{background:#aa0000}
+    .hero{min-height:650px;display:grid;place-items:center;text-align:center;background:linear-gradient(180deg,#fff 0%,#fff7f7 100%);padding:70px 0 60px}
+    .hero-logo{width:min(300px,70vw);margin:0 auto 15px}
+    .eyebrow{color:var(--red);font-weight:900;letter-spacing:2px;text-transform:uppercase;font-size:13px}
+    h1{font-size:clamp(42px,7vw,76px);line-height:1.02;margin:10px 0 15px}
+    .slogan{font-size:clamp(24px,4vw,38px);font-weight:800;color:var(--red);font-style:italic}
+    .hero p{max-width:720px;margin:18px auto;color:var(--muted);font-size:18px}
+    .hero-actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:25px}
+    .whatsapp-btn{background:var(--green)}
+    .whatsapp-btn:hover{background:#1da851}
+    section{padding:78px 0}
+    .section-title{text-align:center;margin-bottom:42px}
+    .section-title h2{font-size:36px;margin-bottom:8px}
+    .section-title p{color:var(--muted)}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .card{padding:28px;background:white;border:1px solid var(--border);border-radius:20px;box-shadow:0 10px 30px rgba(0,0,0,.06)}
+    .icon{font-size:34px;margin-bottom:12px}.card h3{margin-bottom:8px;font-size:21px}.card p{color:var(--muted)}
+    .about{background:var(--soft)}
+    .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+    .about-box{background:white;border-radius:24px;padding:35px;box-shadow:0 12px 35px rgba(0,0,0,.06)}
+    .about-box h2{font-size:38px;margin-bottom:15px}.about-box p{color:var(--muted);margin-bottom:15px}
+    .check{display:flex;gap:10px;margin:10px 0;font-weight:700}.check b{color:var(--red)}
+    .destinations{background:#fff}.destination-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .destination{border:1px solid var(--border);border-radius:18px;padding:22px;background:linear-gradient(145deg,#fff,#fff8f8);font-size:18px;font-weight:800}
+    .destination span{display:block;font-size:30px;margin-bottom:6px}
+    .why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+    .why{padding:24px;border-radius:18px;background:var(--soft);text-align:center}
+    .why strong{display:block;font-size:18px;margin:8px 0}.why p{color:var(--muted);font-size:14px}
+    .form-wrap{display:grid;grid-template-columns:1fr .8fr;gap:28px;align-items:start}
+    form{background:#fff;border:1px solid var(--border);border-radius:24px;padding:28px;box-shadow:0 12px 35px rgba(0,0,0,.06)}
+    label{font-weight:800;font-size:14px;display:block;margin:0 0 6px}
+    input,select,textarea{width:100%;padding:13px 14px;border:1px solid #ddd;border-radius:12px;font:inherit;margin-bottom:15px;outline:none}
+    input:focus,select:focus,textarea:focus{border-color:var(--red);box-shadow:0 0 0 3px rgba(214,0,0,.08)}
+    textarea{min-height:120px;resize:vertical}
+    .submit{width:100%;border:0;background:var(--green);color:#fff;padding:15px;border-radius:12px;font-weight:900;font-size:16px;cursor:pointer}
+    .contact-box{background:var(--dark);color:white;border-radius:24px;padding:32px}
+    .contact-box h3{font-size:27px;margin-bottom:12px}.contact-box p{color:#ccc;margin-bottom:16px}
+    .contact-number{font-size:23px;font-weight:900;margin:15px 0}
+    .contact-list{list-style:none;margin:18px 0}.contact-list li{margin:11px 0;color:#eee}
+    .socials{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+    .socials a{padding:9px 13px;border:1px solid #444;border-radius:999px;font-weight:700;font-size:13px}
+    .socials a:hover{border-color:#fff}
+    .contact-section{background:var(--soft)}
+    footer{background:#0e0e0e;color:white;padding:42px 0 25px}
+    .footer-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:30px;text-align:left}
+    footer h3{margin-bottom:12px}.footer-brand p,footer .footer-col p{color:#aaa;font-size:14px;margin:6px 0}
+    footer .footer-col a{display:block;color:#ccc;font-size:14px;margin:7px 0}
+    footer .footer-col a:hover{color:white}
+    .copyright{border-top:1px solid #2b2b2b;margin-top:25px;padding-top:18px;text-align:center;color:#888;font-size:13px}
+    @media(max-width:900px){.why-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:800px){
+      .navlinks{display:none}.cards,.about-grid,.form-wrap,.destination-grid,.footer-grid{grid-template-columns:1fr}
+      .why-grid{grid-template-columns:1fr 1fr}.hero{min-height:auto;padding:55px 0}.brand span{font-size:14px}.brand img{width:48px;height:48px}
+      section{padding:55px 0}.navbtn{padding:10px 13px;font-size:13px}
+    }
+    @media(max-width:480px){.why-grid{grid-template-columns:1fr}.hero-logo{width:240px}h1{font-size:42px}}
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <nav>
+      <a class="brand" href="#home"><img src="logo.png" alt="Alfa Travel and Tours logo"><span>ALFA TRAVEL AND TOURS</span></a>
+      <div class="navlinks">
+        <a href="#services">Services</a><a href="#destinations">Destinations</a><a href="#about">About</a><a href="#contact">Contact</a>
+      </div>
+      <div style="display:flex;gap:8px;align-items:center"><button id="installBtn" class="navbtn" style="display:none">Install App</button><a class="navbtn" href="tel:+2348053521910">Call Us</a></div>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero" id="home">
+    <div class="container">
+      <img class="hero-logo" src="logo.png" alt="Alfa Travel and Tours">
+      <div class="eyebrow">Your Travel Assistant • Abuja, Nigeria</div>
+      <h1>ALFA TRAVEL AND TOURS</h1>
+      <div class="slogan">Worry Less, Fly More ✈️</div>
+      <p>Making your travel planning easier with flight booking, tours, hotel assistance, airport transfers and travel support.</p>
+      <div class="hero-actions">
+        <a class="whatsapp-btn" href="https://wa.me/2348053521910?text=Hello%20Alfa%20Travel%20and%20Tours%2C%20I%20would%20like%20travel%20assistance." target="_blank" rel="noopener">💬 Chat on WhatsApp</a>
+        <a class="hero-btn" href="#request">Request Assistance</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="container">
+      <div class="section-title"><h2>Our Services</h2><p>Travel assistance from enquiry to your journey.</p></div>
+      <div class="cards">
+        <div class="card"><div class="icon">✈️</div><h3>Flight Booking</h3><p>Ask us about available flights, routes and travel dates.</p></div>
+        <div class="card"><div class="icon">🎫</div><h3>Airline Ticketing</h3><p>Get assistance with airline reservations and ticketing enquiries.</p></div>
+        <div class="card"><div class="icon">🌍</div><h3>Travel & Tours</h3><p>Plan trips and tours with assistance tailored to your journey.</p></div>
+        <div class="card"><div class="icon">🏨</div><h3>Hotel Booking</h3><p>Tell us your destination and dates and ask about hotel options.</p></div>
+        <div class="card"><div class="icon">🧳</div><h3>Travel Assistance</h3><p>Get help with travel-related questions before your trip.</p></div>
+        <div class="card"><div class="icon">🚕</div><h3>Airport Transfer</h3><p>Ask about transport arrangements for your airport journey.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="destinations" id="destinations">
+    <div class="container">
+      <div class="section-title"><h2>Popular Destinations</h2><p>Tell us where you want to go and let us help with your travel plans.</p></div>
+      <div class="destination-grid">
+        <div class="destination"><span>🇬🇧</span>London, United Kingdom</div>
+        <div class="destination"><span>🇺🇸</span>New York, USA</div>
+        <div class="destination"><span>🇦🇪</span>Dubai, UAE</div>
+        <div class="destination"><span>🇫🇷</span>Paris, France</div>
+        <div class="destination"><span>🇿🇦</span>Johannesburg, South Africa</div>
+        <div class="destination"><span>🇬🇭</span>Accra, Ghana</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="container about-grid">
+      <div class="about-box">
+        <h2>Travel with less stress.</h2>
+        <p>At Alfa Travel and Tours, our goal is to make your travel planning easier. Send us your travel request and we will guide you through the next steps.</p>
+        <div class="check"><b>✓</b> Easy communication</div>
+        <div class="check"><b>✓</b> Flight and travel enquiries</div>
+        <div class="check"><b>✓</b> Friendly travel assistance</div>
+        <div class="check"><b>✓</b> Abuja-based travel support</div>
+      </div>
+      <div class="about-box">
+        <h2>Need help now?</h2>
+        <p>Call us or use the social links below to connect with Alfa Travel and Tours.</p>
+        <div class="contact-number">+234 805 352 1910</div>
+        <a class="hero-btn" href="tel:+2348053521910">📞 Call Alfa Travel</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="why">
+    <div class="container">
+      <div class="section-title"><h2>Why Choose Alfa?</h2><p>Simple, accessible support for your travel planning.</p></div>
+      <div class="why-grid">
+        <div class="why"><div class="icon">🤝</div><strong>Personal Assistance</strong><p>Get direct support for your travel enquiries.</p></div>
+        <div class="why"><div class="icon">🌍</div><strong>Travel Support</strong><p>Support for local and international travel plans.</p></div>
+        <div class="why"><div class="icon">💬</div><strong>Easy Communication</strong><p>Reach us by phone, email or social media.</p></div>
+        <div class="why"><div class="icon">🕐</div><strong>Always Open</strong><p>Our online channels are available for enquiries anytime.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact-section" id="request">
+    <div class="container">
+      <div class="section-title"><h2>Send a Travel Request</h2><p>Fill in the form and we will receive your travel enquiry.</p></div>
+      <div class="form-wrap">
+        <form id="travelForm">
+          <label for="name">Your Name</label><input id="name" required placeholder="Enter your name">
+          <label for="service">What do you need?</label>
+          <select id="service" required><option value="">Select a service</option><option>Flight Booking</option><option>Airline Ticketing</option><option>Travel & Tours</option><option>Hotel Booking</option><option>Travel Assistance</option><option>Airport Transfer</option></select>
+          <label for="from">From</label><input id="from" placeholder="e.g. Abuja">
+          <label for="to">To / Destination</label><input id="to" placeholder="e.g. London">
+          <label for="date">Travel Date</label><input id="date" type="date">
+          <label for="passengers">Number of Passengers</label><input id="passengers" type="number" min="1" value="1">
+          <label for="message">Extra Details</label><textarea id="message" placeholder="Tell us anything else we should know..."></textarea>
+          <button class="submit" type="submit">💬 Send Request to WhatsApp</button>
+          <p style="font-size:12px;color:#777;margin-top:10px">Please avoid sending passwords, card PINs or other sensitive information.</p>
+        </form>
+
+        <div class="contact-box" id="contact">
+          <h3>Contact Alfa Travel and Tours</h3>
+          <p><strong>Worry Less, Fly More ✈️</strong></p>
+          <ul class="contact-list">
+            <li>📞 <a href="tel:+2348053521910">+234 805 352 1910</a></li>
+            <li>📧 <a href="mailto:alfatravelsandtours8@gmail.com">alfatravelsandtours8@gmail.com</a></li>
+            <li>📍 Abuja, Nigeria</li>
+            <li>🕐 Always Open</li>
+          </ul>
+          <a class="hero-btn" href="mailto:alfatravelsandtours8@gmail.com">📧 Email Us</a>
+          <div class="socials">
+            <a href="https://www.facebook.com/share/19ieHML9tJ/" target="_blank" rel="noopener">Facebook</a>
+            <a href="https://www.instagram.com/alfatravel01/" target="_blank" rel="noopener">Instagram</a>
+            <a href="https://www.tiktok.com/@alfatravel01" target="_blank" rel="noopener">TikTok</a>
+          </div>
+          <p style="font-size:12px;margin-top:15px">WhatsApp: the current site uses your phone number for WhatsApp links. Confirm if 08053521910 is also your WhatsApp number before publishing the final version.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><h3>ALFA TRAVEL AND TOURS</h3><p>Worry Less, Fly More ✈️</p><p>Travel support from Abuja, Nigeria.</p></div>
+      <div class="footer-col"><h3>Quick Links</h3><a href="#home">Home</a><a href="#services">Services</a><a href="#destinations">Destinations</a><a href="#about">About</a><a href="#request">Contact / Request</a></div>
+      <div class="footer-col"><h3>Connect With Us</h3><a href="tel:+2348053521910">📞 +234 805 352 1910</a><a href="mailto:alfatravelsandtours8@gmail.com">📧 Email</a><a href="https://www.facebook.com/share/19ieHML9tJ/" target="_blank" rel="noopener">Facebook</a><a href="https://www.instagram.com/alfatravel01/" target="_blank" rel="noopener">Instagram</a><a href="https://www.tiktok.com/@alfatravel01" target="_blank" rel="noopener">TikTok</a></div>
+    </div>
+    <div class="copyright">© 2026 Alfa Travel and Tours. All rights reserved.</div>
+  </div>
+</footer>
+
+<script>
+document.getElementById('travelForm').addEventListener('submit', function(e){
+  e.preventDefault();
+  const name=document.getElementById('name').value;
+  const service=document.getElementById('service').value;
+  const from=document.getElementById('from').value||'Not specified';
+  const to=document.getElementById('to').value||'Not specified';
+  const date=document.getElementById('date').value||'Not specified';
+  const passengers=document.getElementById('passengers').value||'Not specified';
+  const message=document.getElementById('message').value||'None';
+  const text=`Hello Alfa Travel and Tours 👋
+
+I would like travel assistance.
+
+Name: ${name}
+Service: ${service}
+From: ${from}
+Destination: ${to}
+Travel date: ${date}
+Passengers: ${passengers}
+Extra details: ${message}
+
+Worry Less, Fly More ✈️`;
+  window.open('https://wa.me/2348053521910?text='+encodeURIComponent(text),'_blank');
+});
+</script>
+<script>
+let deferredPrompt;
+const installBtn=document.getElementById('installBtn');
+window.addEventListener('beforeinstallprompt',(e)=>{e.preventDefault();deferredPrompt=e;installBtn.style.display='inline-flex';});
+installBtn?.addEventListener('click',async()=>{if(!deferredPrompt)return;deferredPrompt.prompt();await deferredPrompt.userChoice;deferredPrompt=null;installBtn.style.display='none';});
+window.addEventListener('appinstalled',()=>{if(installBtn)installBtn.style.display='none';});
+if('serviceWorker' in navigator){window.addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}));}
+</script>
+</body>
+</html>
